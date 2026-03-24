@@ -15,38 +15,24 @@ var config_data = `
     { "name": "Event",
       "code": "e",
       "type": "event",
-      "defaultValue": "2026ilch",
+      "defaultValue": "Hartford",
       "required": "true"
     },
-    { "name": "Match Level",
-      "code": "l",
+    { "name": "Match Type",
+      "code": "mt",
       "type": "level",
       "choices": {
-        "qm": "Quals<br>",
-        "sf": "Semifinals<br>",
-        "f": "Finals"
+        "q": "Qualifications<br>",
+        "p": "Playoffs"
       },
-      "defaultValue": "qm",
+      "defaultValue": "q",
       "required": "true"
     },
     { "name": "Match #",
-      "code": "m",
+      "code": "mn",
       "type": "match",
       "min": 1,
       "max": 150,
-      "required": "true"
-    },
-    { "name": "Robot",
-      "code": "r",
-      "type": "robot",
-      "choices": {
-        "r1": "Red-1",
-        "b1": "Blue-1<br>",
-        "r2": "Red-2",
-        "b2": "Blue-2<br>",
-        "r3": "Red-3",
-        "b3": "Blue-3"
-      },
       "required": "true"
     },
     { "name": "Team #",
@@ -54,27 +40,9 @@ var config_data = `
       "type": "team",
       "min": 1,
       "max": 99999
-    },
-    { "name": "Auto Start Location",
-      "code": "as",
-      "type": "clickable_image",
-      "filename": "2026/half_field.png",
-      "clickRestriction": "one",
-      "dimensions": "7 10",
-      "allowableResponses": "4 11 18 25 32 39 46 53 60 67",
-      "shape": "circle 5 black red true"
     }
   ],
   "auton": [
-    { "name": "Auto Shooting Location",
-      "code": "asl",
-      "type": "clickable_image",
-      "filename": "2026/half_field.png",
-      "dimensions": "7 10",
-      "allowableResponses": "1 2 3 4 8 9 10 11 15 16 17 18 22 23 24 25 29 30 31 32 36 37 38 39 43 44 45 46 50 51 52 53 57 58 59 60 64 65 66 67",
-      "expectedMax": 5,
-      "shape": "circle 5 black red true"
-    },
     { "name": "Fuel Scored",
       "code": "afs",
       "expectedMax": 32,
@@ -88,6 +56,19 @@ var config_data = `
       "altInc1": 10,
       "altInc2": 5,
       "type": "counter"
+    },
+    { "name": "Fuel Scoring Accuracy",
+      "code": "afa",
+      "type": "radio",
+      "choices": {
+        "0": "0%",
+        "25": "25%<br>",
+        "50": "50%",
+        "75": "75%<br>",
+        "90": "90%",
+        "100": "100%"
+      },
+      "defaultValue": "50"
     },
     { "name": "Climb (L1)",
       "code": "ac",
@@ -113,15 +94,6 @@ var config_data = `
     }
   ],
   "teleop": [
-    { "name": "Shooting Locations",
-      "code": "tsl",
-      "type": "clickable_image",
-      "filename": "2026/half_field.png",
-      "dimensions": "7 10",
-      "allowableResponses": "1 2 3 4 8 9 10 11 15 16 17 18 22 23 24 25 29 30 31 32 36 37 38 39 43 44 45 46 50 51 52 53 57 58 59 60 64 65 66 67",
-      "expectedMax": 25,
-      "shape": "circle 5 black red true"
-    },
     { "name": "Fuel Scored",
       "code": "tfs",
       "expectedMax": 150,
@@ -142,6 +114,19 @@ var config_data = `
       "altInc1": 10,
       "altInc2": 5,
       "type": "counter"
+    },
+    { "name": "Fuel Scoring Accuracy",
+      "code": "tfa",
+      "type": "radio",
+      "choices": {
+        "0": "0%",
+        "25": "25%<br>",
+        "50": "50%",
+        "75": "75%<br>",
+        "90": "90%",
+        "100": "100%"
+      },
+      "defaultValue": "50"
     },
     { "name": "Pickup from Depot",
       "code": "tfd",
@@ -175,21 +160,23 @@ var config_data = `
       "code": "ds",
       "type": "radio",
       "choices": {
-        "n": "Not Effective<br>",
-        "a": "Average<br>",
-        "v": "Very Effective<br>",
-        "x": "Not Observed"
+        "1": "Ineffective<br>",
+        "2": "Below Average<br>",
+        "3": "Average<br>",
+        "4": "Above Average<br>",
+        "5": "Excellent<br>"
       },
-      "defaultValue": "x"
+      "defaultValue": "3"
     },
     { "name": "Defense Rating",
       "code": "dr",
       "type": "radio",
       "choices": {
-        "b": "Below Average<br>",
-        "a": "Average<br>",
-        "g": "Good<br>",
-        "e": "Excellent<br>",
+        "1": "Ineffective<br>",
+        "2": "Below Average<br>",
+        "3": "Average<br>",
+        "4": "Above Average<br>",
+        "5": "Excellent<br>",
         "x": "Did not play defense"
       },
       "defaultValue": "x"
@@ -198,11 +185,11 @@ var config_data = `
       "code": "sr",
       "type": "radio",
       "choices": {
-        "1": "1 (slow)<br>",
-        "2": "2<br>",
-        "3": "3<br>",
-        "4": "4<br>",
-        "5": "5 (fast)"
+        "1": "Slowest<br>",
+        "2": "Slow<br>",
+        "3": "Average<br>",
+        "4": "Fast<br>",
+        "5": "Fastest"
       },
       "defaultValue":"3"
     },
@@ -222,11 +209,6 @@ var config_data = `
       "code": "tip",
       "type": "bool"
     },
-    { "name": "Make good<br>alliance partner?",
-      "tooltip": "Would you want this robot on your alliance in eliminations?",
-      "code": "all",
-      "type": "bool"
-    },
     { "name": "Was Defended",
       "code": "def",
       "type": "bool"
@@ -234,13 +216,6 @@ var config_data = `
     { "name": "Excessive Penalties",
       "code": "pen",
       "type": "bool"
-    },
-    { "name": "Fuel Percentage",
-      "tooltip": "What percentage of the total fuel for this alliance did this robot score?",
-      "code": "pct",
-      "type": "number",
-      "min": 0,
-      "max": 100
     },
     { "name": "Comments",
       "code": "co",
