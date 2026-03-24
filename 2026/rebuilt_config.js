@@ -15,7 +15,7 @@ var config_data = `
     { "name": "Event",
       "code": "e",
       "type": "event",
-      "defaultValue": "Hartford",
+      "defaultValue": "2026cthar",
       "required": "true"
     },
     { "name": "Match Type",
@@ -40,6 +40,20 @@ var config_data = `
       "type": "team",
       "min": 1,
       "max": 99999
+    }
+    { "name": "Robot Position",
+      "code": "r",
+      "type": "robot",
+      "choices": {
+        "1": "Red 1",
+        "2": "Red 2",
+        "3": "Red 3",
+        "4": "Blue 1",
+        "5": "Blue 2",
+        "6": "Blue 3"
+      },
+      "defaultValue": "1",
+      "required": "true"
     }
   ],
   "auton": [
