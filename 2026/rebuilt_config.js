@@ -16,7 +16,7 @@ var config_data = `
     { "name": "Event",
       "code": "e",
       "type": "event",
-      "defaultValue": "2026cthar",
+      "defaultValue": "2026mawne",
       "required": "true"
     },
     { "name": "Match Type",
