@@ -9,16 +9,6 @@ var config_data = `
       "code": "t",
       "type": "number"
     },
-    { "name": "Width",
-      "code": "wid",
-      "type": "number",
-      "defaultValue": "0"
-    },
-    { "name": "Weight",
-      "code": "wei",
-      "type": "number",
-      "defaultValue": "0"
-    },
     { "name": "Drivetrain",
       "code": "drv",
       "type": "radio",
@@ -50,21 +40,6 @@ var config_data = `
       },
       "defaultValue":"x"
     },
-    { "name": "Drivetrain Motor",
-      "code": "mot",
-      "type": "radio",
-      "choices": {
-        "n": "Neo<br>",
-        "f": "Falcon<br>",
-        "c": "CIM<br>",
-        "x": "Other<br>"
-      },
-      "defaultValue":"x"
-    },
-    { "name": "# of Batteries",
-      "code": "nob",
-      "type": "number"
-    },
     { "name": "Floor pickup Fuel",
       "code": "fpu",
       "type": "bool"
@@ -79,12 +54,6 @@ var config_data = `
     },
     { "name": "Autos",
       "code": "aut",
-      "type": "text",
-      "size": 20,
-      "maxSize": 250
-    },
-    { "name": "Scouting Method /<br>Program (ScoutingPASS?)",
-      "code": "sct",
       "type": "text",
       "size": 20,
       "maxSize": 250

@@ -29,7 +29,7 @@ var config_data = `
       "required": "true"
     },
     { "name": "Match #",
-      "code": "mn",
+      "code": "m",
       "type": "match",
       "min": 1,
       "max": 150,
