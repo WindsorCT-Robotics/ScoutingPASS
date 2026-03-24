@@ -1471,8 +1471,37 @@ function displayData(){
 }
 
 function copyData(){
-  navigator.clipboard.writeText(getData(dataFormat));
-  document.getElementById('copyButton').setAttribute('value','Copied');
+  const data = getData(dataFormat);
+  if (navigator && navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
+    navigator.clipboard.writeText(data).then(() => {
+      const btn = document.getElementById('copyButton');
+      if (btn) btn.setAttribute('value','Copied');
+    }).catch(() => {
+      fallbackCopy(data);
+    });
+  } else {
+    fallbackCopy(data);
+  }
+}
+
+function fallbackCopy(text) {
+  const textarea = document.createElement('textarea');
+  textarea.value = text;
+  textarea.style.position = 'fixed';
+  textarea.style.left = '-9999px';
+  document.body.appendChild(textarea);
+  textarea.select();
+  try {
+    if (document.execCommand && document.execCommand('copy')) {
+      const btn = document.getElementById('copyButton');
+      if (btn) btn.setAttribute('value','Copied');
+    } else {
+      window.prompt('Copy the data below (Cmd/Ctrl+C):', text);
+    }
+  } catch (e) {
+    window.prompt('Copy the data below (Cmd/Ctrl+C):', text);
+  }
+  document.body.removeChild(textarea);
 }
 
 window.onload = function () {
