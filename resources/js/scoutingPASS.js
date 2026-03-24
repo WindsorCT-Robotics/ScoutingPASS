@@ -932,17 +932,24 @@ function updateQRHeader() {
   let str = 'Event: !EVENT! Match: !MATCH! Robot: !ROBOT! Team: !TEAM!';
 
   if (!pitScouting) {
+    const elE = document.getElementById("input_e");
+    const elM = document.getElementById("input_m");
+    const elR = document.getElementById("display_r");
+    const elT = document.getElementById("input_t");
+
     str = str
-      .replace('!EVENT!', document.getElementById("input_e").value)
-      .replace('!MATCH!', document.getElementById("input_m").value)
-      .replace('!ROBOT!', document.getElementById("display_r").value)
-      .replace('!TEAM!', document.getElementById("input_t").value);
+      .replace('!EVENT!', elE && typeof elE.value !== 'undefined' ? elE.value : '')
+      .replace('!MATCH!', elM && typeof elM.value !== 'undefined' ? elM.value : '')
+      .replace('!ROBOT!', elR && typeof elR.value !== 'undefined' ? elR.value : '')
+      .replace('!TEAM!', elT && typeof elT.value !== 'undefined' ? elT.value : '');
   } else {
+    const elT = document.getElementById("input_t");
     str = 'Pit Scouting - Team !TEAM!'
-      .replace('!TEAM!', document.getElementById("input_t").value);
+      .replace('!TEAM!', elT && typeof elT.value !== 'undefined' ? elT.value : '');
   }
 
-  document.getElementById("display_qr-info").textContent = str;
+  const displayEl = document.getElementById("display_qr-info");
+  if (displayEl) displayEl.textContent = str;
 }
 
 
