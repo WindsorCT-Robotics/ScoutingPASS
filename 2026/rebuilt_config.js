@@ -19,7 +19,7 @@ var config_data = `
       "required": "true"
     },
     { "name": "Match Type",
-      "code": "mt",
+      "code": "l", 
       "type": "level",
       "choices": {
         "q": "Qualifications<br>",
