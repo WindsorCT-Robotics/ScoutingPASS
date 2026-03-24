@@ -43,13 +43,6 @@ var config_data = `
     }
   ],
   "auton": [
-    { "name": "Fuel Scored",
-      "code": "afs",
-      "expectedMax": 32,
-      "altInc1": 10,
-      "altInc2": 5,
-      "type": "counter"
-    },
     { "name": "Pass from Neutral Zone",
       "code": "apn",
       "expectedMax": 60,
@@ -57,16 +50,15 @@ var config_data = `
       "altInc2": 5,
       "type": "counter"
     },
-    { "name": "Fuel Scoring Accuracy",
+    { "name": "Fuel Scored Accuracy",
       "code": "afa",
       "type": "radio",
       "choices": {
-        "0": "0%",
-        "25": "25%<br>",
-        "50": "50%",
-        "75": "75%<br>",
-        "90": "90%",
-        "100": "100%"
+        "25": "0% - 25%",
+        "50": "25% - 50%",
+        "75": "50% - 75%",
+        "90": "75% - 90%",
+        "100": "90% - 100%"
       },
       "defaultValue": "50"
     },
@@ -94,13 +86,6 @@ var config_data = `
     }
   ],
   "teleop": [
-    { "name": "Fuel Scored",
-      "code": "tfs",
-      "expectedMax": 150,
-      "altInc1": 10,
-      "altInc2": 5,
-      "type": "counter"
-    },
     { "name": "Pass from Neutral Zone",
       "code": "pnz",
       "expectedMax": 250,
