@@ -123,6 +123,13 @@ var config_data = `
       "altInc2": 5,
       "type": "counter"
     },
+    { "name": "Fuel Scored",
+      "code": "afs",
+      "expectedMax": 32,
+      "altInc1": 10,
+      "altInc2": 5,
+      "type": "counter"
+    },
     { "name": "Fuel Scoring Accuracy",
       "code": "tfa",
       "type": "radio",
