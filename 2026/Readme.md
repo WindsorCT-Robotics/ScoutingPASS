@@ -148,7 +148,7 @@ The configuration tracks robot capabilities to pick up FUEL from various locatio
 
 ### Passing and FUEL Transfer
 
-The "Pass from Neutral Zone" and "Pass from Opp Alliance Zone" counters track strategic FUEL redistribution:
+The "Fuel Passed from Neutral Zone" and "Fuel Passed from Opp Alliance Zone" counters track strategic FUEL redistribution:
 
 **Purpose:** Identify robots that contribute to alliance scoring by relocating FUEL rather than scoring directly
 

@@ -58,7 +58,7 @@ var config_data = `
     }
   ],
   "auton": [
-    { "name": "Pass from Neutral Zone",
+    { "name": "Fuel Passed from Neutral Zone",
       "code": "apn",
       "expectedMax": 60,
       "altInc1": 10,
@@ -72,11 +72,11 @@ var config_data = `
       "altInc2": 5,
       "type": "counter"
     },
-    { "name": "Fuel Scored Accuracy",
+    { "name": "Fuel Scoring Accuracy",
       "code": "afa",
       "type": "radio",
       "choices": {
-        "0": "0%",
+        "0": "0% ",
         "25": "25%<br>",
         "50": "50%",
         "75": "75%<br>",
@@ -109,14 +109,14 @@ var config_data = `
     }
   ],
   "teleop": [
-    { "name": "Pass from Neutral Zone",
+    { "name": "Fuel Passed from Neutral Zone",
       "code": "pnz",
       "expectedMax": 250,
       "altInc1": 10,
       "altInc2": 5,
       "type": "counter"
     },
-    { "name": "Pass from Opp Alliance Zone",
+    { "name": "Fuel Passed from Opp Alliance Zone",
       "code": "poa",
       "expectedMax": 250,
       "altInc1": 10,
@@ -134,7 +134,7 @@ var config_data = `
       "code": "tfa",
       "type": "radio",
       "choices": {
-        "0": "0%",
+        "0": "0% ",
         "25": "25%<br>",
         "50": "50%",
         "75": "75%<br>",
