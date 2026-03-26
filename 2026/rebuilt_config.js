@@ -42,7 +42,7 @@ var config_data = `
       "min": 1,
       "max": 99999
     },
-    { "name": "Robot Position",
+    { "name": "Driver Station",
       "code": "r",
       "type": "robot",
       "choices": {
@@ -58,16 +58,16 @@ var config_data = `
     }
   ],
   "auton": [
-    { "name": "Fuel Passed from Neutral Zone",
-      "code": "apn",
-      "expectedMax": 60,
+    { "name": "Fuel Scored",
+      "code": "afs",
+      "expectedMax": 32,
       "altInc1": 10,
       "altInc2": 5,
       "type": "counter"
     },
-    { "name": "Fuel Scored",
-      "code": "afs",
-      "expectedMax": 32,
+    { "name": "Fuel Passed from Neutral Zone",
+      "code": "apn",
+      "expectedMax": 60,
       "altInc1": 10,
       "altInc2": 5,
       "type": "counter"
@@ -76,7 +76,7 @@ var config_data = `
       "code": "afa",
       "type": "radio",
       "choices": {
-        "0": "0% ",
+        "0": "0%  ",
         "25": "25%<br>",
         "50": "50%",
         "75": "75%<br>",
@@ -109,6 +109,13 @@ var config_data = `
     }
   ],
   "teleop": [
+    { "name": "Fuel Scored",
+      "code": "afs",
+      "expectedMax": 32,
+      "altInc1": 10,
+      "altInc2": 5,
+      "type": "counter"
+    },
     { "name": "Fuel Passed from Neutral Zone",
       "code": "pnz",
       "expectedMax": 250,
@@ -123,18 +130,11 @@ var config_data = `
       "altInc2": 5,
       "type": "counter"
     },
-    { "name": "Fuel Scored",
-      "code": "afs",
-      "expectedMax": 32,
-      "altInc1": 10,
-      "altInc2": 5,
-      "type": "counter"
-    },
     { "name": "Fuel Scoring Accuracy",
       "code": "tfa",
       "type": "radio",
       "choices": {
-        "0": "0% ",
+        "0": "0%  ",
         "25": "25%<br>",
         "50": "50%",
         "75": "75%<br>",
