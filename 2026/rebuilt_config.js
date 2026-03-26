@@ -60,7 +60,7 @@ var config_data = `
   "auton": [
     { "name": "Fuel Scored",
       "code": "afs",
-      "expectedMax": 32,
+      "expectedMax": 150,
       "altInc1": 10,
       "altInc2": 5,
       "type": "counter"
@@ -111,7 +111,7 @@ var config_data = `
   "teleop": [
     { "name": "Fuel Scored",
       "code": "tfs",
-      "expectedMax": 32,
+      "expectedMax": 500,
       "altInc1": 10,
       "altInc2": 5,
       "type": "counter"
