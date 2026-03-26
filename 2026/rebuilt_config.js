@@ -110,7 +110,7 @@ var config_data = `
   ],
   "teleop": [
     { "name": "Fuel Scored",
-      "code": "afs",
+      "code": "tfs",
       "expectedMax": 32,
       "altInc1": 10,
       "altInc2": 5,
