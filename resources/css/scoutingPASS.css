@@ -216,12 +216,14 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
     border: 1px solid black;
-    width: 100%;
+    width: auto;
+    margin: 0 auto;
 }
 
 td {
     padding: 10px 4px;
     vertical-align: middle;
+    text-align: center;
 }
 
 input {
@@ -232,13 +234,13 @@ input {
 }
 
 .title {
-    width: 50%;
+    width: auto;
     text-align: right;
 }
 
 .field {
-    width: 50%;
-    text-align: left;
+    width: auto;
+    text-align: center;
     vertical-align: middle;
 }
 

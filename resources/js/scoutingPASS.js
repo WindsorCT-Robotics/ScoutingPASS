@@ -149,7 +149,7 @@ function addTimer(table, idx, name, data) {
 }
 
 function addCounter(table, idx, name, data) {
-  const row = table.insertRow(idx);
+  let row = table.insertRow(idx);
   const hasExtraInc = data.hasOwnProperty('altInc1') || data.hasOwnProperty('altInc2');
   
   // Error Handling

@@ -46,12 +46,12 @@ var config_data = `
       "code": "r",
       "type": "robot",
       "choices": {
-        "1": "Red 1",
-        "2": "Red 2",
-        "3": "Red 3",
-        "4": "Blue 1",
-        "5": "Blue 2",
-        "6": "Blue 3"
+        "1": "Red 1<br>",
+        "2": "Red 2<br>",
+        "3": "Red 3<br>",
+        "4": "Blue 1<br>",
+        "5": "Blue 2<br>",
+        "6": "Blue 3<br>"
       },
       "defaultValue": "1",
       "required": "true"
@@ -72,11 +72,13 @@ var config_data = `
     },
     { "name": "Number of Sweeps to Neutral Zone",
       "code": "asnz",
-      "type": "counter"
+      "type": "counter",
+      "fullRow": true
     },
     { "name": "Number of Scoring Intervals",
       "code": "asi",
-      "type": "counter"
+      "type": "counter",
+      "fullRow": true
     },
     { "name": "Method of Return from Neutral Zone",
       "code": "amrnz",
@@ -134,13 +136,14 @@ var config_data = `
       },
       "defaultValue": "n"
     },
-    { "name": "Timely scoring intervals? (times shooting into Hub)",
+    { "name": "Timely scoring intervals? d",
       "code": "ttsi",
       "type": "bool"
     },
     { "name": "Number of Volleys",
       "code": "tnv",
-      "type": "counter"
+      "type": "counter",
+      "fullRow": true
     },
     { "name": "Defense Being Played Against?",
       "code": "tdbpa",
@@ -208,14 +211,17 @@ var config_data = `
     },
     { "name": "Defense Being Played Against?",
       "code": "edbpa",
+      "type": "bool"
+    },
+    { "name": "Climb Attempted?",
+      "code": "eclimb",
       "type": "radio",
       "choices": {
-        "c": "Climb",
         "l1": "L1",
         "l2": "L2",
         "l3": "L3",
-        "a": "Attempted",
-        "na": "Not Attempted"
+        "na": "NA",
+        "f": "Failed"
       },
       "defaultValue": "na"
     }
@@ -263,7 +269,7 @@ var config_data = `
       },
       "defaultValue": "3"
     },
-    { "name": "Defense Not Played Against",
+    { "name": "No Defense Played",
       "code": "dnpa",
       "type": "bool"
     },
