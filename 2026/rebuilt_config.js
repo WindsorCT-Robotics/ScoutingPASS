@@ -136,7 +136,7 @@ var config_data = `
       },
       "defaultValue": "n"
     },
-    { "name": "Timely scoring intervals? d",
+    { "name": "Timely scoring intervals?",
       "code": "ttsi",
       "type": "bool"
     },
