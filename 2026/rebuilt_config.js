@@ -94,7 +94,7 @@ var config_data = `
       "code": "apfd",
       "type": "bool"
     },
-    { "name": "Pickup from Hground?",
+    { "name": "Pickup from Ground?",
       "code": "apfh",
       "type": "bool"
     },
