@@ -1482,6 +1482,7 @@ function displayData(){
 }
 
 function copyData(){
+
   const data = getData(dataFormat);
   if (navigator && navigator.clipboard && typeof navigator.clipboard.writeText === 'function') {
     navigator.clipboard.writeText(data).then(() => {

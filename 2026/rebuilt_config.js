@@ -121,7 +121,7 @@ var config_data = `
       "type": "radio",
       "choices": {
         "y": "Yes",
-        "n": "No",
+        "n": "No <br>",
         "nfa": "No Fuel Available"
       },
       "defaultValue": "n"
@@ -131,7 +131,7 @@ var config_data = `
       "type": "radio",
       "choices": {
         "y": "Yes",
-        "n": "No",
+        "n": "No <br>",
         "dnginz": "Does not go into Neutral Zone"
       },
       "defaultValue": "n"
@@ -140,18 +140,14 @@ var config_data = `
       "code": "ttsi",
       "type": "bool"
     },
-    { "name": "Number of Volleys",
+    { "name": "Number of scoring intervals",
       "code": "tnv",
       "type": "counter",
       "fullRow": true
     },
     { "name": "Defense Being Played Against?",
       "code": "tdbpa",
-      "type": "radio",
-      "choices": {
-        "hi": "Hub Inactive"
-      },
-      "defaultValue": "hi"
+      "type": "bool"
     }
   ],
   "teleop-2": [
@@ -186,7 +182,7 @@ var config_data = `
       "type": "radio",
       "choices": {
         "y": "Yes",
-        "n": "No",
+        "n": "No <br>",
         "nfa": "No Fuel Available"
       },
       "defaultValue": "n"
@@ -196,16 +192,16 @@ var config_data = `
       "type": "radio",
       "choices": {
         "y": "Yes",
-        "n": "No",
+        "n": "No <br>",
         "dnginz": "Does not go into Neutral Zone"
       },
       "defaultValue": "n"
     },
-    { "name": "Timely scoring intervals? (times shooting into Hub)",
+    { "name": "Timely scoring intervals?",
       "code": "ettsi",
       "type": "bool"
     },
-    { "name": "Number of Volleys",
+    { "name": "Number of scoring intervals",
       "code": "etnv",
       "type": "counter"
     },
@@ -219,8 +215,8 @@ var config_data = `
       "choices": {
         "l1": "L1",
         "l2": "L2",
-        "l3": "L3",
-        "na": "NA",
+        "l3": "L3 <br>",
+        "na": "n/a",
         "f": "Failed"
       },
       "defaultValue": "na"
@@ -243,6 +239,7 @@ var config_data = `
       "code": "spd",
       "type": "radio",
       "choices": {
+        "0": "n/a <br>",
         "1": "1",
         "2": "2",
         "3": "3",
@@ -250,17 +247,12 @@ var config_data = `
         "5": "5"
       },
       "defaultValue": "3"
-    },
-    { "name": "Defense Note Played",
-      "code": "dnp",
-      "type": "text",
-      "size": 20,
-      "maxSize": 50
     },
     { "name": "Skill Playing Around Defense",
       "code": "spad",
       "type": "radio",
       "choices": {
+        "0": "n/a <br>",
         "1": "1",
         "2": "2",
         "3": "3",
@@ -269,16 +261,12 @@ var config_data = `
       },
       "defaultValue": "3"
     },
-    { "name": "No Defense Played",
-      "code": "dnpa",
-      "type": "bool"
-    },
     { "name": "Breakdown?",
       "code": "brk",
       "type": "radio",
       "choices": {
-        "d": "Disabled",
-        "dt": "Drivetrain Issues",
+        "d": "Disabled <br>",
+        "dt": "Drivetrain Issues <br>",
         "si": "Shooter/Intake Issues"
       },
       "defaultValue": "d"
