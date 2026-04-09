@@ -109,19 +109,7 @@ var config_data = `
       "defaultValue": "3"
     }
   ],
-  "teleop": [
-    { "name": "Collect Fuel?",
-      "code": "tcf",
-      "type": "bool"
-    },
-    { "name": "Shuttle Fuel?",
-      "code": "tsf",
-      "type": "bool"
-    },
-    { "name": "Shoot Fuel?",
-      "code": "tshf",
-      "type": "bool"
-    },
+  "teleop-1": [
     { "name": "Ready to score at shift start?",
       "code": "trss",
       "type": "bool"
@@ -161,7 +149,9 @@ var config_data = `
         "hi": "Hub Inactive"
       },
       "defaultValue": "hi"
-    },
+    }
+  ],
+  "teleop-2": [
     { "name": "Shuttling Game Pieces by Pushing?",
       "code": "tsgpp",
       "type": "bool"
@@ -181,18 +171,6 @@ var config_data = `
     { "name": "Defense on Bump Traversal?",
       "code": "tdobt",
       "type": "bool"
-    },
-    { "name": "Scoring Accuracy",
-      "code": "tsa",
-      "type": "radio",
-      "choices": {
-        "1": "1",
-        "2": "2",
-        "3": "3",
-        "4": "4",
-        "5": "5"
-      },
-      "defaultValue": "3"
     }
   ],
   "endgame": [

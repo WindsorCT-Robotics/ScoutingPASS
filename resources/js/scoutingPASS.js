@@ -808,11 +808,22 @@ function configure() {
   });
 
   // Configure teleop screen
-  var tc = mydata.teleop;
-  var tt = document.getElementById("teleop_table");
+  var tcActive = mydata["teleop-1"] || mydata.teleop;
+  var ttActive = document.getElementById("teleop_table_active");
   idx = 0;
-  tc.forEach(element => {
-    idx = addElement(tt, idx, element);
+  tcActive.forEach(element => {
+    let cloned = JSON.parse(JSON.stringify(element));
+    cloned.code = element.code + "_active";
+    idx = addElement(ttActive, idx, cloned);
+  });
+
+  var tcInactive = mydata["teleop-2"] || mydata.teleop;
+  var ttInactive = document.getElementById("teleop_table_inactive");
+  idx = 0;
+  tcInactive.forEach(element => {
+    let cloned = JSON.parse(JSON.stringify(element));
+    cloned.code = element.code + "_inactive";
+    idx = addElement(ttInactive, idx, cloned);
   });
 
   // Configure endgame screen

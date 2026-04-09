@@ -28,7 +28,7 @@
 
 				<div id="auton" class="main-panel" style="background-color: rgb(123, 168, 184);">
 					<h1 id="autonHeader1" class="page_title"><span class="odd">P</span><span class="even">W</span><span class="odd">n</span><span class="even">A</span><span class="odd">G</span><span class="even">E</span><br>Scouting PASS</h1>
-					<h2 id="autonHeader2">Auton</h2>
+					<h2 id="autonHeader2">Auto</h2>
 					<p class="match-label"><input type="button" value="Prev" id="prevButton1" onclick="swipePage(-1)"><input type="button" value="Next" id="nextButton3" onclick="swipePage(1)"></p>
 					<table id="auton_table">
 					<!-- ###AUTON-COMPONENTS###-->
@@ -38,10 +38,15 @@
 
 				<div id="teleop" class="main-panel" style="background-color: rgb(175, 207, 163);">
 					<h1 id="teleopHeader1" class="page_title"><span class="odd">P</span><span class="even">W</span><span class="odd">n</span><span class="even">A</span><span class="odd">G</span><span class="even">E</span><br>Scouting PASS</h1>
-					<h2 id="teleopHeader2" >Teleop</h2>
+					<h2 id="teleopHeader2">Teleop</h2>
 					<p class="match-label"><input type="button" value="Prev" id="prevButton3" onclick="swipePage(-1)"><input type="button" value="Next" id="nextButton5" onclick="swipePage(1)"></p>
-					<table id="teleop_table">
-						<!-- ###TELEOP-COMPONENTS###-->
+					<h3>ACTIVE</h3>
+					<table id="teleop_table_active">
+						<!-- ###TELEOP-ACTIVE-COMPONENTS###-->
+					</table>
+					<h3>INACTIVE</h3>
+					<table id="teleop_table_inactive">
+						<!-- ###TELEOP-INACTIVE-COMPONENTS###-->
 					</table>
 					<p class="match-label"><input type="button" value="Prev" id="prevButton4" onclick="swipePage(-1)"> <input type="button" value="Next" id="nextButton6" onclick="swipePage(1)"></p>
 				</div>
