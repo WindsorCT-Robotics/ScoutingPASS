@@ -74,7 +74,7 @@ var config_data = `
       "code": "asnz",
       "type": "counter"
     },
-    { "name": "Number of Scoring Intervals (times shooting into Hub)",
+    { "name": "Number of Scoring Intervals",
       "code": "asi",
       "type": "counter"
     },
