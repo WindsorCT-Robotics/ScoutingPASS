@@ -58,179 +58,246 @@ var config_data = `
     }
   ],
   "auton": [
-    { "name": "Fuel Passed from Neutral Zone",
-      "code": "apn",
-      "expectedMax": 60,
-      "altInc1": 10,
-      "altInc2": 5,
-      "type": "counter"
-    },
-    { "name": "Fuel Scored",
-      "code": "afs",
-      "expectedMax": 32,
-      "altInc1": 10,
-      "altInc2": 5,
-      "type": "counter"
-    },
-    { "name": "Fuel Scoring Accuracy",
-      "code": "afa",
+    { "name": "Starting Location",
+      "code": "asl",
       "type": "radio",
       "choices": {
-        "0": "0% ",
-        "25": "25%<br>",
-        "50": "50%",
-        "75": "75%<br>",
-        "90": "90%",
-        "100": "100%"
+        "dt": "Depot Trench<br>",
+        "db": "Depot Bump<br>", 
+        "h": "Hub<br>",
+        "ob": "Outpost Bump<br>",
+        "ot": "Outpost Trench<br>"
       },
-      "defaultValue": "50"
+      "defaultValue": "h"
     },
-    { "name": "Climb (L1)",
-      "code": "ac",
+    { "name": "Number of Sweeps to Neutral Zone",
+      "code": "asnz",
+      "type": "counter"
+    },
+    { "name": "Number of Scoring Intervals (times shooting into Hub)",
+      "code": "asi",
+      "type": "counter"
+    },
+    { "name": "Method of Return from Neutral Zone",
+      "code": "amrnz",
       "type": "radio",
       "choices": {
-        "c": "Climbed<br>",
-        "a": "Attempted<br>",
-        "x": "Not Attempted"
+        "t": "Trench",
+        "b": "Bump",
+        "btb": "Bump and Trench"
       },
-      "defaultValue": "x"
+      "defaultValue": "t"
     },
-    { "name": "Pickup from Depot",
-      "code": "afd",
+    { "name": "Pickup from Depot?",
+      "code": "apfd",
       "type": "bool"
     },
-    { "name": "Pickup from Outpost",
-      "code": "afo",
+    { "name": "Pickup from Hground?",
+      "code": "apfh",
       "type": "bool"
     },
-    { "name": "Pickup from Neutral Zone",
-      "code": "aff",
-      "type": "bool"
+    { "name": "Scoring Accuracy",
+      "code": "asa",
+      "type": "radio",
+      "choices": {
+        "1": "1",
+        "2": "2",
+        "3": "3",
+        "4": "4",
+        "5": "5"
+      },
+      "defaultValue": "3"
     }
   ],
   "teleop": [
-    { "name": "Fuel Passed from Neutral Zone",
-      "code": "pnz",
-      "expectedMax": 250,
-      "altInc1": 10,
-      "altInc2": 5,
-      "type": "counter"
+    { "name": "Collect Fuel?",
+      "code": "tcf",
+      "type": "bool"
     },
-    { "name": "Fuel Passed from Opp Alliance Zone",
-      "code": "poa",
-      "expectedMax": 250,
-      "altInc1": 10,
-      "altInc2": 5,
-      "type": "counter"
+    { "name": "Shuttle Fuel?",
+      "code": "tsf",
+      "type": "bool"
     },
-    { "name": "Fuel Scored",
-      "code": "afs",
-      "expectedMax": 32,
-      "altInc1": 10,
-      "altInc2": 5,
-      "type": "counter"
+    { "name": "Shoot Fuel?",
+      "code": "tshf",
+      "type": "bool"
     },
-    { "name": "Fuel Scoring Accuracy",
-      "code": "tfa",
+    { "name": "Ready to score at shift start?",
+      "code": "trss",
+      "type": "bool"
+    },
+    { "name": "Targeted pickup of fuel in Alliance Zone?",
+      "code": "ttpfaz",
       "type": "radio",
       "choices": {
-        "0": "0% ",
-        "25": "25%<br>",
-        "50": "50%",
-        "75": "75%<br>",
-        "90": "90%",
-        "100": "100%"
+        "y": "Yes",
+        "n": "No",
+        "nfa": "No Fuel Available"
       },
-      "defaultValue": "50"
+      "defaultValue": "n"
     },
-    { "name": "Pickup from Depot",
-      "code": "tfd",
+    { "name": "Targeted pickup of fuel in Neutral Zone?",
+      "code": "ttpfnz",
+      "type": "radio",
+      "choices": {
+        "y": "Yes",
+        "n": "No",
+        "dnginz": "Does not go into Neutral Zone"
+      },
+      "defaultValue": "n"
+    },
+    { "name": "Timely scoring intervals? (times shooting into Hub)",
+      "code": "ttsi",
       "type": "bool"
     },
-    { "name": "Pickup from Outpost",
-      "code": "tfo",
+    { "name": "Number of Volleys",
+      "code": "tnv",
+      "type": "counter"
+    },
+    { "name": "Defense Being Played Against?",
+      "code": "tdbpa",
+      "type": "radio",
+      "choices": {
+        "hi": "Hub Inactive"
+      },
+      "defaultValue": "hi"
+    },
+    { "name": "Shuttling Game Pieces by Pushing?",
+      "code": "tsgpp",
       "type": "bool"
     },
-    { "name": "Pickup from Floor",
-      "code": "tff",
+    { "name": "Shuttling Game Pieces by Snowblowing?",
+      "code": "tsgps",
       "type": "bool"
+    },
+    { "name": "Fill Hopper for next Shift?",
+      "code": "tfhns",
+      "type": "bool"
+    },
+    { "name": "Defense in Opposing Alliance Zone?",
+      "code": "tdoaz",
+      "type": "bool"
+    },
+    { "name": "Defense on Bump Traversal?",
+      "code": "tdobt",
+      "type": "bool"
+    },
+    { "name": "Scoring Accuracy",
+      "code": "tsa",
+      "type": "radio",
+      "choices": {
+        "1": "1",
+        "2": "2",
+        "3": "3",
+        "4": "4",
+        "5": "5"
+      },
+      "defaultValue": "3"
     }
   ],
   "endgame": [
-    { "name": "Climb",
-      "code": "tc",
+    { "name": "Ready to score at end game start?",
+      "code": "ertss",
+      "type": "bool"
+    },
+    { "name": "Targeted pickup of fuel in Alliance Zone?",
+      "code": "ettpfaz",
       "type": "radio",
       "choices": {
-        "1": "Level 1<br>",
-        "2": "Level 2<br>",
-        "3": "Level 3<br>",
-        "a": "Attempted<br>",
-        "x": "Not Attempted"
+        "y": "Yes",
+        "n": "No",
+        "nfa": "No Fuel Available"
       },
-      "defaultValue": "x"
+      "defaultValue": "n"
+    },
+    { "name": "Targeted pickup of fuel in Neutral Zone?",
+      "code": "ettpfnz",
+      "type": "radio",
+      "choices": {
+        "y": "Yes",
+        "n": "No",
+        "dnginz": "Does not go into Neutral Zone"
+      },
+      "defaultValue": "n"
+    },
+    { "name": "Timely scoring intervals? (times shooting into Hub)",
+      "code": "ettsi",
+      "type": "bool"
+    },
+    { "name": "Number of Volleys",
+      "code": "etnv",
+      "type": "counter"
+    },
+    { "name": "Defense Being Played Against?",
+      "code": "edbpa",
+      "type": "radio",
+      "choices": {
+        "c": "Climb",
+        "l1": "L1",
+        "l2": "L2",
+        "l3": "L3",
+        "a": "Attempted",
+        "na": "Not Attempted"
+      },
+      "defaultValue": "na"
     }
   ],
   "postmatch": [
-    { "name": "Driver Skill",
-      "code": "ds",
+    { "name": "Driver Intentionality",
+      "code": "di",
       "type": "radio",
       "choices": {
-        "1": "Ineffective<br>",
-        "2": "Below Average<br>",
-        "3": "Average<br>",
-        "4": "Above Average<br>",
-        "5": "Excellent<br>"
+        "1": "1",
+        "2": "2",
+        "3": "3",
+        "4": "4",
+        "5": "5"
       },
       "defaultValue": "3"
     },
-    { "name": "Defense Rating",
-      "code": "dr",
+    { "name": "Skill Playing Defense",
+      "code": "spd",
       "type": "radio",
       "choices": {
-        "1": "Ineffective<br>",
-        "2": "Below Average<br>",
-        "3": "Average<br>",
-        "4": "Above Average<br>",
-        "5": "Excellent<br>",
-        "x": "Did not play defense"
+        "1": "1",
+        "2": "2",
+        "3": "3",
+        "4": "4",
+        "5": "5"
       },
-      "defaultValue": "x"
+      "defaultValue": "3"
     },
-    { "name": "Speed Rating",
-      "code": "sr",
+    { "name": "Defense Note Played",
+      "code": "dnp",
+      "type": "text",
+      "size": 20,
+      "maxSize": 50
+    },
+    { "name": "Skill Playing Around Defense",
+      "code": "spad",
       "type": "radio",
       "choices": {
-        "1": "Slowest<br>",
-        "2": "Slow<br>",
-        "3": "Average<br>",
-        "4": "Fast<br>",
-        "5": "Fastest"
+        "1": "1",
+        "2": "2",
+        "3": "3",
+        "4": "4",
+        "5": "5"
       },
-      "defaultValue":"3"
+      "defaultValue": "3"
     },
-    { "name": "Crossed Bump",
-      "code": "bmp",
+    { "name": "Defense Not Played Against",
+      "code": "dnpa",
       "type": "bool"
     },
-    { "name": "Crossed Trench",
-      "code": "tre",
-      "type": "bool"
-    },
-    { "name": "Died/Immobilized",
-      "code": "die",
-      "type": "bool"
-    },
-    { "name": "Tippy<br>(almost tipped over)",
-      "code": "tip",
-      "type": "bool"
-    },
-    { "name": "Was Defended",
-      "code": "def",
-      "type": "bool"
-    },
-    { "name": "Excessive Penalties",
-      "code": "pen",
-      "type": "bool"
+    { "name": "Breakdown?",
+      "code": "brk",
+      "type": "radio",
+      "choices": {
+        "d": "Disabled",
+        "dt": "Drivetrain Issues",
+        "si": "Shooter/Intake Issues"
+      },
+      "defaultValue": "d"
     },
     { "name": "Comments",
       "code": "co",
