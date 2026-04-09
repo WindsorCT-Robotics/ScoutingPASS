@@ -42,7 +42,7 @@ var config_data = `
       "min": 1,
       "max": 99999
     },
-    { "name": "Robot Position",
+    { "name": "Driver Station",
       "code": "r",
       "type": "robot",
       "choices": {
