@@ -109,6 +109,16 @@ var config_data = `
         "5": "5"
       },
       "defaultValue": "3"
+    },
+    { "name": "L1 Climb Attempt",
+      "code": "aca",
+      "type": "radio",
+      "choices": {
+        "1": "L1",
+        "2": "Failed",
+        "3": "N/A"
+      },
+      "defaultValue": "3"
     }
   ],
   "teleop-1": [
