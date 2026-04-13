@@ -16,7 +16,7 @@ var config_data = `
     { "name": "Event",
       "code": "e",
       "type": "event",
-      "defaultValue": "2026necmp",
+      "defaultValue": "2026necmp1",
       "required": "true"
     },
     { "name": "Match Type",
