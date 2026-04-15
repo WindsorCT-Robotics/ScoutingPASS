@@ -158,7 +158,7 @@ var config_data = `
     { "name": "Defense Being Played Against?",
       "code": "tdbpa",
       "type": "bool"
-    }
+    },
     { "name": "Scoring Accuracy",
     "code": "tasa",
     "type": "radio",
@@ -170,7 +170,6 @@ var config_data = `
       "5": "5"
     },
     "defaultValue": "3"
-  },
   ],
   "teleop-2": [
     { "name": "Shuttling Game Pieces by Pushing?",
@@ -242,7 +241,7 @@ var config_data = `
         "f": "Failed"
       },
       "defaultValue": "na"
-    }
+    },
     { "name": "Scoring Accuracy",
       "code": "esa",
       "type": "radio",
@@ -254,7 +253,7 @@ var config_data = `
         "5": "5"
       },
       "defaultValue": "3"
-    },
+    }
   ],
   "postmatch": [
     { "name": "Driver Intentionality",
