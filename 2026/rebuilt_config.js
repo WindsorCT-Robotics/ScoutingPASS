@@ -159,6 +159,18 @@ var config_data = `
       "code": "tdbpa",
       "type": "bool"
     }
+    { "name": "Scoring Accuracy",
+    "code": "tasa",
+    "type": "radio",
+    "choices": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5"
+    },
+    "defaultValue": "3"
+  },
   ],
   "teleop-2": [
     { "name": "Shuttling Game Pieces by Pushing?",
@@ -231,6 +243,18 @@ var config_data = `
       },
       "defaultValue": "na"
     }
+    { "name": "Scoring Accuracy",
+      "code": "esa",
+      "type": "radio",
+      "choices": {
+        "1": "1",
+        "2": "2",
+        "3": "3",
+        "4": "4",
+        "5": "5"
+      },
+      "defaultValue": "3"
+    },
   ],
   "postmatch": [
     { "name": "Driver Intentionality",

@@ -1081,6 +1081,8 @@ function clearForm() {
     }
   }
   drawFields()
+  qr_clear();
+  document.getElementById("display_qr-info").textContent = "";
 }
 
 function startTouch(e) {
